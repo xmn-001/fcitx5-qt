@@ -21,8 +21,8 @@ set_target_properties(fcitx5platforminputcontextplugin PROPERTIES
                          AUTOMOC TRUE
                         )
 target_include_directories(fcitx5platforminputcontextplugin PRIVATE "${PROJECT_SOURCE_DIR}/common")
-if (BUILD_ONLY_PLUGIN AND BUILD_STATIC_PLUGIN)
-target_compile_definitions(fcitx5platforminputcontextplugin PRIVATE "-DQT_STATICPLUGIN")
+if (BUILD_STATIC_PLUGIN)
+    target_compile_definitions(fcitx5platforminputcontextplugin PRIVATE "-DQT_STATICPLUGIN")
 endif()
 
 target_compile_definitions(fcitx5platforminputcontextplugin PRIVATE "-DFCITX_PLUGIN_DATA_FILE_PATH=\"${CMAKE_CURRENT_BINARY_DIR}/fcitx5.json\"")
